@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Todo list</title>
+</head>
+
+<body class="bg-primary container-fluid">
+  <div class="bg-light mt-5 pt-5 mx-auto px-auto shadow rounded">
+    <header class="container m-auto p-auto">
+      <span class="float-right icon text-center rounded-circle bg-info text-light pt-1" style="height: 40px; width: 40px">
+        YP
+      </span>
+      <h2 class="mt-3 mb-5 text-dark">ToDo-List</h1>
+        <nav>
+          <ul class="nav justify-content-around">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-primary rounded my-1" style="background-color: rgba(0, 123, 255, 0.2);">
+                TOTAL: <span class="font-weight-bold">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-success rounded my-1 done">
+                DONE: <span class="font-weight-bold">3</span>
+              </a>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-info rounded my-1 review">
+                REVIEW: <span class="font-weight-bold">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-warning rounded my-1 inProgress">
+                IN PROGRESS: <span class="font-weight-bold">3</span>
+              </a>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-danger rounded my-1 toDo">
+                TO DO: <span class="font-weight-bold">3</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+    </header>
+    <main>
+      <form class="container newTask">
+        <div class="form-group row align-items-center justify-content-center border-bottom border-success">
+          <input type="text" class="ml-4 form-control form-control-lg col-8 border-0 bg-light" placeholder="New To-Do">
+          <button type="button" class="btn btn-link col-2 ml-0 pl-0 mb-0 pb-0 text-dark" data-toggle="modal" data-target="#newTaskInput">
+            <h2><i class="fas fa-arrow-right"></i></h2>
+          </button>
+        </div>
+      </form>
+      <div class="container">
+        <div class="row task" id="task1">
+          <div class="col-lg-6 taskTitle">
+            <a href="#newTaskInput" role="button" class="btn btn-link text-dark icon ml-0 pl-0" data-toggle="modal" data-target="#">
+              <p class="text-left"><strong class="title">Name</strong> WesBos flexbox and flex grid course ...</p>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <ul class="row taskSummary">
+              <li class="col-4 col-sm-3 order-1 order-sm-1">
+                <span class="dot rounded-circle bg-danger icon"></span> High
+              </li>
+              <li class="col-4 col-sm-1 order-2 order-sm-2 text-sm-left text-center">
+                <button class="btn btn-link text-secondary" data-toggle="modal" data-target="#"><i class="icon fas fa-tag"></i></button>
+              </li>
+              <li class="col-6 col-sm-3 order-4 order-sm-3">
+                19/07/2020
+              </li>
+              <li class="col-6 col-sm-3 order-5 order-sm-4 text-sm-center text-right">
+                Yumi Patton
+              </li>
+              <li class="col-4 col-sm-2 order-3 order-sm-5">
+                <form class="bin" action="index.html" method="post">
+                  <input type="checkbox" class="border border-info">
+                  <button type="button" class="ml-0 pl-0 btn btn-link text-info"><i class="icon fas fa-trash"></i></button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="row task" id="task2">
+          <div class="col-lg-6 taskTitle">
+            <a href="#" role="button" class="btn btn-link text-dark icon text-left ml-0 pl-0" data-toggle="modal" data-target="#">
+              <p><strong class="title">Name</strong> Javascript/React course</p>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <ul class="row taskSummary">
+              <li class="col-4 col-sm-3 order-1 order-sm-1">
+                <span class="dot rounded-circle bg-warning icon"></span> Medium
+              </li>
+              <li class="col-4 col-sm-1 order-2 order-sm-2 text-sm-left text-center">
+                <button class="btn btn-link text-secondary" data-toggle="modal" data-target="#"><i class="icon fas fa-tag"></i></button>
+              </li>
+              <li class="col-6 col-sm-3 order-4 order-sm-3">
+                22/07/2020
+              </li>
+              <li class="col-6 col-sm-3 order-5 order-sm-4 text-sm-center text-right">
+                Yumi Patton
+              </li>
+              <li class="col-4 col-sm-2 order-3 order-sm-5">
+                <form class="bin" action="" method="post">
+                  <input type="checkbox" class="border border-info">
+                  <button type="button" class="ml-0 pl-0 btn btn-link text-info"><i class="icon fas fa-trash"></i></button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </main>
+    <footer class="container mt-5 pt-5">
+      <form class="clearAll" action="" method="post">
+        <button type="button" class="ml-0 pl-0 btn btn-link text-info">Clear Checked <i class="icon fas fa-trash"></i></button>
+      </form>
+    </footer>
+  </div>
+  <!--modals-->
+  <div class="modal fade" id="newTaskInput">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Task Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="taskTitle">Title</label>
+              <input class="form-control" type="text" id="taskTitle" name="taskTitle" value="JavaScript">
+            </div>
+            <div class="row">
+              <div class="form-group col-lg-6 form-row">
+                <label class="col-4 col-form-label" for="taskDueDate">Due Date:</label>
+                <input class="col-8 form-control" class="color" type="date" id="taskDueDate" name="taskDueDate">
+              </div>
+              <div class="form-group col-lg-6 form-row">
+                <label class="col-4 col-form-label" for="taskAssignedTo">Assigned to:</label>
+                <input class="col-8 form-control" type="text" id="taskAssignedTo" name="taskAssignedTo">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="taskDescription">Task Detail</label>
+              <textarea class="form-control" id="taskDescription">Editable Text</textarea>
+            </div>
+            <p class="text-center"><button class="btn btn-outline-primary btn-lg border-0 font-weight-bold shadow" data-toggle="collapse" href="#selectPriority" type="button">!!! Priority</button>
+              <button class="btn btn-outline-primary btn-lg border-0 font-weight-bold shadow" data-toggle="collapse" href="#selectStatus" type="button"><i class="icon fas fa-tag"></i>Status</button></p>
+            <div class="collapse" id="selectPriority">
+              <div class="card card-body">
+                <p>
+                  Set priority of your task
+                </p>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="highPriority" name="priority" class="custom-control-input" value="4">
+                  <label class="custom-control-label font-weight-bold text-danger" for="highPriority">!!! High Priority</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="mediumPriority" name="priority" class="custom-control-input" value="3">
+                  <label class="custom-control-label font-weight-bold text-warning" for="mediumPriority">!! Medium Priority</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="lowPriority" name="priority" class="custom-control-input" value="2">
+                  <label class="custom-control-label font-weight-bold text-info" for="lowPriority">! Low Priority</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="noPriority" name="priority" class="custom-control-input" value="1">
+                  <label class="custom-control-label font-weight-bold text-dark" for="noPriority"> No Priority</label>
+                </div>
+              </div>
+            </div>
+            <div class="collapse" id="selectStatus">
+              <div class="card card-body">
+                <p>
+                  Record your progress
+                </p>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="statusDone" name="status" class="custom-control-input" value="done">
+                  <label class="custom-control-label font-weight-bold text-success" for="statusDone"><i class="icon fas fa-tag"></i> Done</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="statusReview" name="status" class="custom-control-input" value="review">
+                  <label class="custom-control-label font-weight-bold text-info" for="statusReview"><i class="icon fas fa-tag"></i> Review</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="statusInProgress" name="status" class="custom-control-input" value="inProgress">
+                  <label class="custom-control-label font-weight-bold text-warning" for="statusInProgress"><i class="icon fas fa-tag"></i> In Progress</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="statusToDo" name="status" class="custom-control-input" value="toDo">
+                  <label class="custom-control-label font-weight-bold text-danger" for="statusToDo"> <i class="icon fas fa-tag"></i> To Do</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary shadow" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary shadow" data-dismiss="modal">Save Changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
