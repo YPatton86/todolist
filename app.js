@@ -1,3 +1,8 @@
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+let taskDB=[];
+let taskID = 1;
 //taskDetails
 const taskTitle = document.querySelector('#taskTitle');
 const taskDescription = document.querySelector('#taskDescription');
@@ -14,11 +19,6 @@ const done = document.querySelector('#statusDone');
 const review = document.querySelector('#statusReview');
 const inProgress = document.querySelector('#statusInProgress');
 const toDo = document.querySelector('#statusToDo');
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-let taskID = 10;
 const newToDo = document.querySelector("#newToDo");
 const openForm = document.querySelector("#openForm");
 //const openForm = document.querySelector("#newTask");
@@ -34,6 +34,7 @@ openForm.addEventListener("click", function(event){
   }
   newToDo.value = null;
 });
+
 function clearValues(){
   taskTitle.value = null;
   taskDescription.value = null;
@@ -164,33 +165,50 @@ function validationTaskForm(title,description,assignee, date, priority, status){
   return false;
 }
 function addTask(title,description,assignee, date, time, priority, status){
+  taskID++;
+  const task = {title,description,assignee, date, time, priority, status, id:taskID};
+  taskDB.push(task);
+  refreshPage()
+}
+
+function refreshPage(){
+  clearAll();
+  taskDB.forEach(task => addTaskToPage(task));
+}
+
+function clearAll(){
+  taskContainer.innerHTML = "";
+}
+
+//function name changed edit later
+function addTaskToPage(task){
 
   const html = `
-  <div class="row task" id="task${taskID}">
+  <div class="row task" id="task${task.id}">
     <div class="col-lg-6 taskTitle order-2 order-lg-1">
       <a href="#newTaskInput" role=button class="d-inline btn btn-link col-2 ml-0 pl-0 mb-0 pb-0 text-dark" data-toggle="modal" data-target="#newTaskInput">
         <i class="fas fa-edit"></i></a>
-        <p class="text-left d-inline"><sapn class="h6">${title}</span> <a href="#task${taskID}Description" class="text-secondary icon ml-0 pl-0 small" data-toggle="collapse" data-target="#task${taskID}Description"> See More
+        <p class="text-left d-inline"><sapn class="h6">${task.title}</span> <a href="#task${task.id}Description" class="text-secondary icon ml-0 pl-0 small" data-toggle="collapse" data-target="#task${task.id}Description"> See More
       </a>
 
           </p>
-        <p id="task${taskID}Description" class="collapse">
-              ${description}
+        <p id="task${task.id}Description" class="collapse">
+              ${task.description}
         </p>
     </div>
     <div class="col-lg-6 order-1 order-lg-2">
       <ul class="row taskSummary justify-content-between">
         <li class="col-4 col-sm-1 order-1 order-sm-1">
-          <span class="dot rounded-circle ${priority} icon" data-toggle="tooltip" data-placement="top" title="Priority"></span>
+          <span class="dot rounded-circle ${task.priority} icon" data-toggle="tooltip" data-placement="top" title="Priority"></span>
         </li>
         <li class="col-4 col-sm-1 order-2 order-sm-2 text-center">
-          <i class="icon fas fa-tag ${status}" data-toggle="tooltip" data-placement="top" title="Status"></i>
+          <i class="icon fas fa-tag ${task.status}" data-toggle="tooltip" data-placement="top" title="Status"></i>
         </li>
         <li class="col-6 col-sm-4 order-4 order-sm-3 text-sm-right">
-          ${date} ${time}
+          ${task.date} ${task.time}
         </li>
         <li class="col-6 col-sm-4 order-5 order-sm-4 text-sm-center text-right">
-        ${assignee}
+        ${task.assignee}
         </li>
         <li class="col-4 col-sm-2 order-3 order-sm-5 text-right">
         <form class="bin" action="" method="post">
@@ -216,7 +234,7 @@ function addTask(title,description,assignee, date, time, priority, status){
        });
 
   taskContainer.append(taskElement);
-  taskID++;
+
 }
 addTask("Team work Project",
 `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
