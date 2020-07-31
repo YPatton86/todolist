@@ -130,10 +130,12 @@ taskDueDate.addEventListener("input", function(event){
   const dueDate = new Date(event.target.value);
   validation(today <= dueDate);
 })
+
 function todayConvertor(){
   const today = new Date();
-  return today.setHours(0);
+  return today.setHours(0,0,0,0);
 }
+
 
 function validation(boolean){
   if(boolean){
