@@ -1,13 +1,3 @@
-/*let editButton1 = document.querySelector('#editButton');
-let modalTitle = document.querySelector(".modal-title");
-let cardtTitle1 =  document.querySelector("#task1 .card-title");
-let modalTaskTitle =  document.querySelector("#taskTitle");
-
-editButton1.onclick = function(){
-  modalTitle.innerText = "Edit Task";
-  modalTaskTitle.value =  cardTitle1.innerText;
-}
-*/
 //taskDetails
 const taskTitle = document.querySelector('#taskTitle');
 const taskDescription = document.querySelector('#taskDescription');
@@ -212,7 +202,6 @@ function addTask(title,description,assignee, date, time, priority, status){
     </div>
   </div>
   <hr>
-
 `;
  const taskElement = document.createRange().createContextualFragment(html);
   const deleteTask= taskElement.querySelector('button.bin');
@@ -229,27 +218,21 @@ function addTask(title,description,assignee, date, time, priority, status){
   taskContainer.append(taskElement);
   taskID++;
 }
-
-const deleteTasks = document.querySelectorAll('button.bin');
-
-deleteTasks.forEach(function(deleteTask){
-  deleteTask.addEventListener("click", function(){
-    deleteTask.closest("div.task").remove();
-  });
-})
-
-
-const checkboxes = document.querySelectorAll('.bin > input[type="checkbox"]');
-const clearChecked = document.querySelector("#clearChecked");
-clearChecked.addEventListener('click', function(){
-  checkboxes.forEach(function(checkbox){
-    if (checkbox.checked){
-      checkbox.closest("div.task").remove();
-    }
-  });
-})
-
-
-console.log(deleteTasks);
-console.log(taskContainer);
-console.log(taskModalSaveButton);
+addTask("Team work Project",
+`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+"Yumi Patton",
+"2020-07-31",
+"02:05",
+"bg-danger",
+"text-info");
+addTask("Javescript project",
+`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
+"Yumi Patton",
+"2020-08-31",
+"10:05",
+"bg-warning",
+"text-danger");
