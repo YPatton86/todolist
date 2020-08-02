@@ -23,41 +23,41 @@
         <nav>
           <ul class="nav justify-content-around">
             <li class="nav-item">
-              <a href="/index.html" class="nav-link text-primary rounded my-1 active" style="background-color: rgba(0, 123, 255, 0.2);">
-                TOTAL: <span class="font-weight-bold">3</span>
-              </a>
+              <button id="getTotal" type = "button" class="btn text-primary btn-med" style="background-color: rgba(0, 123, 255, 0.2);">
+                TOTAL: <span class="font-weight-bold"></span>
+              </button>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-success rounded my-1 done">
-                DONE: <span class="font-weight-bold">3</span>
-              </a>
+              <button  id="getDone" type = "button" class="btn text-success done btn-med ">
+                DONE: <span class="font-weight-bold"></span>
+              </button>
             <li class="nav-item">
-              <a href="#" class="nav-link text-info rounded my-1 review">
-                REVIEW: <span class="font-weight-bold">3</span>
-              </a>
+              <button id="getReview" type = "button" class="btn text-info review btn-med ">
+                REVIEW: <span class="font-weight-bold"></span>
+              </button>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-warning rounded my-1 inProgress">
-                IN PROGRESS: <span class="font-weight-bold">3</span>
-              </a>
+              <button id="getInProgress" type="button" class="btn text-warning inProgress btn-med ">
+                IN PROGRESS: <span class="font-weight-bold"></span>
+              </button>
             <li class="nav-item">
-              <a href="#" class="nav-link text-danger rounded my-1 toDo">
-                TO DO: <span class="font-weight-bold">3</span>
-              </a>
+              <button id="getToDo" type="button" class="btn text-danger toDo btn-med ">
+                TO DO: <span class="font-weight-bold"></span>
+              </button>
             </li>
           </ul>
         </nav>
 
     </header>
     <main>
-      <form class="container newTask" id=newTask>
+      <div class="container newTask" id=newTask>
         <div class="form-group row align-items-center justify-content-center border-bottom border-success">
           <input id="newToDo" type="text" class="ml-4 form-control form-control-lg col-8 border-0 bg-light" placeholder="New To-Do">
           <a href="#newTaskInput" id ="openForm" role="button" class="btn btn-link col-2 ml-0 pl-0 mb-0 pb-0 text-dark" data-toggle="modal" data-target="#newTaskInput">
             <h2><i class="fas fa-arrow-right"></i></h2>
           </a>
         </div>
-      </form>
+      </div>
 
       <div class="container" id="tasks">
       </div>
@@ -74,7 +74,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Task Detail</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -159,7 +159,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary shadow" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary shadow" id="cancelButton" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary shadow"  id="task-modal-save">Save Changes</button>
             </div>
           </div>
